@@ -1,6 +1,6 @@
 # Custom Content Store Behavior for Alfresco
 
-In large-scale Alfresco installations, it’s common to use multiple ContentStores. According to Alfresco's official documentation, the `cm:storeName` aspect allows you to designate a specific ContentStore for storing a node. 
+In large-scale Alfresco installations, it’s common to use multiple ContentStores. According to [Alfresco's official documentation](https://support.hyland.com/r/Alfresco/Alfresco-Content-Services/23.3/Alfresco-Content-Services/Administer/Content-stores/Content-store-selector), the `cm:storeName` aspect allows you to designate a specific ContentStore for storing a node. 
 
 In one scenario, we needed all content within a particular Site/Library to be stored in a secondary ContentStore. We initially implemented a folder rule to set the `cm:storeName` aspect at node creation. However, this approach caused a performance issue: the node would first be loaded into the primary ContentStore, then offloaded into `temp/Alfresco`, and finally reloaded into the secondary ContentStore.
 
